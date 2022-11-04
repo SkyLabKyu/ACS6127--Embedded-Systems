@@ -171,16 +171,51 @@ void SystemInit(void)
   #if (__FPU_PRESENT == 1) && (__FPU_USED == 1)
     SCB->CPACR |= ((3UL << 10*2)|(3UL << 11*2));  /* set CP10 and CP11 Full Access */
   #endif
+	
+	// Sets PLL to give 168MHz when using HSI
+	RCC->PLLCFGR = RCC->PLLCFGR & ~0x00007FC0; /*Un-sets all PLLN bits */
+	RCC->PLLCFGR = RCC->PLLCFGR + (336<<6); /* Sets PLLN to 336 */
+	RCC->PLLCFGR = RCC->PLLCFGR & ~0x00030000; /*Un-sets all PLLP bits */
+	RCC->PLLCFGR = RCC->PLLCFGR + (1<<16); /* Sets PLLP to 4 */
+	RCC->PLLCFGR = RCC->PLLCFGR & ~0x0000003F; /*Un-sets all PLLM bits */
+	RCC->PLLCFGR = RCC->PLLCFGR + 8; /* Sets PLLM to 8 or can use 8 instead of hex */
+	// Enables the HSE clock
+	RCC->CR |= RCC_CR_HSEON;
+	// Waits for the HSE clock to become stable and ready to use
+	do
+	{
+	} while(((RCC->CR & RCC_CR_HSERDY) == 0));
+	/* Enables high performance mode, System frequency up to 168 MHz */
+	RCC->APB1ENR |= RCC_APB1ENR_PWREN;
+	PWR->CR |= PWR_CR_PMODE; 
+	RCC->PLLCFGR |= RCC_PLLCFGR_PLLSRC_HSI; // Selects the HSI (internal oscillator) as the PLL source 
+	/* Enables the main PLL */
+	RCC->CR |= RCC_CR_PLLON;
+	/* Waits until the main PLL is ready */
+	while((RCC->CR & RCC_CR_PLLRDY) == 0)
+	{
+	}
+	/* Configure Flash prefetch, Instruction cache, Data cache and wait state */
+	FLASH->ACR = FLASH_ACR_ICEN |FLASH_ACR_DCEN |FLASH_ACR_LATENCY_5WS;
+	/* Selects the main PLL as the system clock source */
+	RCC->CFGR &= (uint32_t)((uint32_t)~(RCC_CFGR_SW));
+	RCC->CFGR |= RCC_CFGR_SW_PLL;
+	/* Waits until the main PLL is used as the system clock source */
+	while ((RCC->CFGR & (uint32_t)RCC_CFGR_SWS ) != RCC_CFGR_SWS_PLL);
+	{
+	}
+	RCC->CFGR |= RCC_CFGR_PPRE2_DIV2; // Sets the prescaler for the APB2 high speed clock to 2, which gives an APB2 clock frequency of 84MHz if the system clock is 168MHz
+	RCC->CFGR |= RCC_CFGR_PPRE1_DIV4; // Sets the prescaler for the APB1 low speed clock to 4, which gives an APB1 clock frequency of 42MHz if the system clock is 168MHz
 
-#if defined (DATA_IN_ExtSRAM) || defined (DATA_IN_ExtSDRAM)
-  SystemInit_ExtMemCtl(); 
-#endif /* DATA_IN_ExtSRAM || DATA_IN_ExtSDRAM */
+	#if defined (DATA_IN_ExtSRAM) || defined (DATA_IN_ExtSDRAM)
+		SystemInit_ExtMemCtl(); 
+	#endif /* DATA_IN_ExtSRAM || DATA_IN_ExtSDRAM */
 
-  /* Configure the Vector Table location -------------------------------------*/
-#if defined(USER_VECT_TAB_ADDRESS)
-  SCB->VTOR = VECT_TAB_BASE_ADDRESS | VECT_TAB_OFFSET; /* Vector Table Relocation in Internal SRAM */
-#endif /* USER_VECT_TAB_ADDRESS */
-}
+		/* Configure the Vector Table location -------------------------------------*/
+	#if defined(USER_VECT_TAB_ADDRESS)
+		SCB->VTOR = VECT_TAB_BASE_ADDRESS | VECT_TAB_OFFSET; /* Vector Table Relocation in Internal SRAM */
+	#endif /* USER_VECT_TAB_ADDRESS */
+	}
 
 /**
    * @brief  Update SystemCoreClock variable according to Clock Register Values.
