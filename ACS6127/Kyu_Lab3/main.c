@@ -27,7 +27,7 @@ int main() {
 	HAL_SPI_Init(&SPI_Params);
 	
 	//Configure GPIOA Parameters
-	GPIO_Params.Pin = (1<<5) | (1<<6) | (1<<7);
+	GPIO_Params.Pin = GPIO_PIN_5 | GPIO_PIN_6 | GPIO_PIN_7;
 	GPIO_Params.Mode = GPIO_MODE_AF_PP;
 	GPIO_Params.Pull = GPIO_NOPULL;
 	GPIO_Params.Speed = GPIO_SPEED_FAST;
@@ -38,7 +38,7 @@ int main() {
 	HAL_GPIO_Init(GPIOA, &GPIO_Params);
 	
 	//Configure GPIOE Parameters
-	GPIO_Params.Pin = (1<<3);
+	GPIO_Params.Pin = GPIO_PIN_3;
 	GPIO_Params.Mode = GPIO_MODE_OUTPUT_PP;
 	GPIO_Params.Pull = GPIO_PULLUP;
 	GPIO_Params.Speed = GPIO_SPEED_FAST;
@@ -63,7 +63,7 @@ int main() {
 		HAL_SPI_Receive(&SPI_Params, SPI_Buffer, 1, 1000);
 		GPIOE->BSRR |= GPIO_PIN_3;
 		
-		if(SPI_Buffer[0] == 0x3f){
+		if((SPI_Buffer[0] & 0x3f) == 1){
 			GPIOD->BSRR |= 1<<12;
 		}else{
 			GPIOD->BSRR |= 1<<14;
