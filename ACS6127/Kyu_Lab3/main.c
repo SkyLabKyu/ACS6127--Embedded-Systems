@@ -7,7 +7,8 @@
 int main() {
 	SPI_HandleTypeDef SPI_Params;
 	GPIO_InitTypeDef GPIO_Params;
-	uint8_t SPI_Buffer[1];
+	uint8_t SPI_Buffer[2];
+	uint8_t z;
 
 	
 	RCC->APB2ENR |= RCC_APB2ENR_SPI1EN; //Enable SPI clock enable
@@ -55,18 +56,28 @@ int main() {
 	GPIOD->MODER |= GPIO_MODER_MODER14_0; // Port D.14 output - red LED
 	GPIOD->MODER |= GPIO_MODER_MODER12_0; // Port D.12 output - green LED
 	
+	//Enable z axis in LIS3DH control register 4
+	SPI_Buffer[0] = 0x20;
+	SPI_Buffer[1] = 0x04;
+	GPIOE->BSRR |= 1<<(3+16);
+	HAL_SPI_Transmit(&SPI_Params, SPI_Buffer, 1, 1000);
+	GPIOE->BSRR |= 1<<3;
+	
 	while(1){
-		SPI_Buffer[0] = 0x80 | 0x0F;
+		SPI_Buffer[0] = 0x80 | 0x2d;
 		GPIOE->BSRR |= GPIO_PIN_3<<16;
 		HAL_SPI_Transmit(&SPI_Params, SPI_Buffer, 1, 1000);
 		SPI_Buffer[0] = 0x00;
 		HAL_SPI_Receive(&SPI_Params, SPI_Buffer, 1, 1000);
 		GPIOE->BSRR |= GPIO_PIN_3;
+		z = SPI_Buffer[0];
 		
-		if((SPI_Buffer[0] & 0x3f) == 1){
+		if(z>0){
 			GPIOD->BSRR |= 1<<12;
+			GPIOD->BSRR |= 1<<(14+16);
 		}else{
 			GPIOD->BSRR |= 1<<14;
+			GPIOD->BSRR |= 1<<(12+16);
 		}
 	}
 }
