@@ -16,6 +16,8 @@
  */
 #define CMSIS_device_header "stm32f4xx.h"
 
+#define RTE_CMSIS_RTOS                  /* CMSIS-RTOS */
+        #define RTE_CMSIS_RTOS_RTX              /* CMSIS-RTOS Keil RTX */
 #define RTE_DEVICE_FRAMEWORK_CLASSIC
 #define RTE_DEVICE_HAL_COMMON
 #define RTE_DEVICE_HAL_CORTEX
