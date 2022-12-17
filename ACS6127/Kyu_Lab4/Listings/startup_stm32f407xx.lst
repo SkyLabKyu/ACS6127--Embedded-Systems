@@ -852,14 +852,16 @@ ARM Macro Assembler    Page 14
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
 erwork --depend=.\objects\startup_stm32f407xx.d -o.\objects\startup_stm32f407xx
-.o -I.\RTE\Device\STM32F407VGTx -I.\RTE\_Target_1 -IC:\Keil_v5\ARM\PACK\ARM\CMS
-IS\5.9.0\CMSIS\Core\Include -IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.9.0\CMSIS\RTOS\RT
-X\INC -IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.16.0\Drivers\CMSIS\Device\ST\S
-TM32F4xx\Include -IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.16.0\Drivers\STM32F
-4xx_HAL_Driver\Inc --predefine="__RTX SETA 1" --predefine="__EVAL SETA 1" --pre
-define="__UVISION_VERSION SETA 526" --predefine="_RTE_ SETA 1" --predefine="STM
-32F407xx SETA 1" --list=.\listings\startup_stm32f407xx.lst RTE\Device\STM32F407
-VGTx\startup_stm32f407xx.s
+.o -IC:\Users\KyuSiik\Documents\GitHub\ACS6127--Embedded-Systems\ACS6127\Kyu_La
+b4\RTE -IC:\Users\KyuSiik\Documents\GitHub\ACS6127--Embedded-Systems\ACS6127\Ky
+u_Lab4\RTE\Device\STM32F407VGTx -IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Inc
+lude -IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC -IC:\Keil_v5\ARM\
+PACK\Keil\STM32F4xx_DFP\2.16.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include -IC:\K
+eil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.16.0\Drivers\STM32F4xx_HAL_Driver\Inc --pr
+edefine="__RTX SETA 1" --predefine="__EVAL SETA 1" --predefine="__UVISION_VERSI
+ON SETA 521" --predefine="_RTE_ SETA 1" --predefine="STM32F407xx SETA 1" --list
+=.\listings\startup_stm32f407xx.lst RTE\Device\STM32F407VGTx\startup_stm32f407x
+x.s
 
 
 

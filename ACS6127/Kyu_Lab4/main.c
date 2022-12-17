@@ -16,6 +16,8 @@ int main (void) {
 
   // initialize peripherals here
 	LED_init();
+	PB_init();
+	
 
   // create 'thread' functions that start executing,
   // example: tid_name = osThreadCreate (osThread(name), NULL);
