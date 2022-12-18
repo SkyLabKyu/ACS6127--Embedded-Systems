@@ -1,11 +1,11 @@
 Dependencies for Project 'Kyu_Assgt', Target 'Target 1': (DO NOT MODIFY !)
-F (.\main.c)(0x639DC4FB)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -g -O0 --apcs=interwork --split_sections -I ..\Kyu_Assgt-IC:\Users\KyuSiik\Documents\GitHub\ACS6127--Embedded-Systems\ACS6127\Kyu_Assgt\RTE-IC:\Users\KyuSiik\Documents\GitHub\ACS6127--Embedded-Systems\ACS6127\Kyu_Assgt\RTE\Device\STM32F407VGTx-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.16.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.16.0\Drivers\STM32F4xx_HAL_Driver\Inc-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (.\main.c)(0x639F2CA3)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -g -O0 --apcs=interwork --split_sections -I ..\Kyu_Assgt-IC:\Users\KyuSiik\Documents\GitHub\ACS6127--Embedded-Systems\ACS6127\Kyu_Assgt\RTE-IC:\Users\KyuSiik\Documents\GitHub\ACS6127--Embedded-Systems\ACS6127\Kyu_Assgt\RTE\Device\STM32F407VGTx-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.16.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.16.0\Drivers\STM32F4xx_HAL_Driver\Inc-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (osObjects.h)(0x55E7E6BA)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC\cmsis_os.h)(0x5627AA4E)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x574EA096)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x574EA096)
 I (kyu-utils.h)(0x639DBDCE)
-I (Thread.h)(0x639DBDCE)
+I (Thread.h)(0x639F2CA3)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.16.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x61112330)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.16.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f407xx.h)(0x61112330)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include\core_cm4.h)(0x5626197C)
@@ -34,7 +34,7 @@ I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.16.0\Drivers\STM32F4xx_HAL_Driver\In
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.16.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_spi.h)(0x61112330)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.16.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h)(0x61112330)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.16.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h)(0x61112330)
-F (.\Thread.c)(0x639DD369)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -g -O0 --apcs=interwork --split_sections -I ..\Kyu_Assgt-IC:\Users\KyuSiik\Documents\GitHub\ACS6127--Embedded-Systems\ACS6127\Kyu_Assgt\RTE-IC:\Users\KyuSiik\Documents\GitHub\ACS6127--Embedded-Systems\ACS6127\Kyu_Assgt\RTE\Device\STM32F407VGTx-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.16.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.16.0\Drivers\STM32F4xx_HAL_Driver\Inc-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER-o .\objects\thread.o --omf_browse .\objects\thread.crf --depend .\objects\thread.d)
+F (.\Thread.c)(0x639F3140)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -g -O0 --apcs=interwork --split_sections -I ..\Kyu_Assgt-IC:\Users\KyuSiik\Documents\GitHub\ACS6127--Embedded-Systems\ACS6127\Kyu_Assgt\RTE-IC:\Users\KyuSiik\Documents\GitHub\ACS6127--Embedded-Systems\ACS6127\Kyu_Assgt\RTE\Device\STM32F407VGTx-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.16.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.16.0\Drivers\STM32F4xx_HAL_Driver\Inc-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER-o .\objects\thread.o --omf_browse .\objects\thread.crf --depend .\objects\thread.d)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC\cmsis_os.h)(0x5627AA4E)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x574EA096)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x574EA096)
@@ -99,9 +99,9 @@ I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.16.0\Drivers\STM32F4xx_HAL_Driver\In
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.16.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim.h)(0x61112330)
 I (C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.16.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_tim_ex.h)(0x61112330)
 F (.\kyu-utils.h)(0x639DBDCE)()
-F (.\Thread.h)(0x639DBDCE)()
+F (.\Thread.h)(0x639F2CA3)()
 F (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\LIB\ARM\RTX_CM4.lib)(0x5624BF76)()
-F (RTE\CMSIS\RTX_Conf_CM.c)(0x639DD723)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -g -O0 --apcs=interwork --split_sections -I ..\Kyu_Assgt-IC:\Users\KyuSiik\Documents\GitHub\ACS6127--Embedded-Systems\ACS6127\Kyu_Assgt\RTE-IC:\Users\KyuSiik\Documents\GitHub\ACS6127--Embedded-Systems\ACS6127\Kyu_Assgt\RTE\Device\STM32F407VGTx-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.16.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.16.0\Drivers\STM32F4xx_HAL_Driver\Inc-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER-o .\objects\rtx_conf_cm.o --omf_browse .\objects\rtx_conf_cm.crf --depend .\objects\rtx_conf_cm.d)
+F (RTE\CMSIS\RTX_Conf_CM.c)(0x639F26C3)(-c --cpu Cortex-M4.fp -D__RTX -D__EVAL -g -O0 --apcs=interwork --split_sections -I ..\Kyu_Assgt-IC:\Users\KyuSiik\Documents\GitHub\ACS6127--Embedded-Systems\ACS6127\Kyu_Assgt\RTE-IC:\Users\KyuSiik\Documents\GitHub\ACS6127--Embedded-Systems\ACS6127\Kyu_Assgt\RTE\Device\STM32F407VGTx-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.16.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.16.0\Drivers\STM32F4xx_HAL_Driver\Inc-D__UVISION_VERSION="521" -D_RTE_ -DSTM32F407xx -DUSE_HAL_DRIVER-o .\objects\rtx_conf_cm.o --omf_browse .\objects\rtx_conf_cm.crf --depend .\objects\rtx_conf_cm.d)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\RTOS\RTX\INC\cmsis_os.h)(0x5627AA4E)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x574EA096)
 I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x574EA096)
